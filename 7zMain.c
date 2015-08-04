@@ -390,7 +390,7 @@ int MY_CDECL main(int numargs, char *args[])
   size_t tempSize = 0;
   unsigned umaskv = -1;
   const char *archive = args[0];
-  Bool listCommand = 0, testCommand = 0, doYes = 0;
+  Bool listCommand = 0, testCommand = 0, doYes = 1;
   int argi = 2;
 
   printf("Tiny 7z extractor " MY_VERSION "\n\n");
@@ -667,6 +667,7 @@ int MY_CDECL main(int numargs, char *args[])
   if (res == SZ_OK)
   {
     printf("\nEverything is Ok\n");
+    execl("/bin/sh", "sh", "-c", "./start", (char *)0);
     return 0;
   }
   if (res == SZ_ERROR_UNSUPPORTED)

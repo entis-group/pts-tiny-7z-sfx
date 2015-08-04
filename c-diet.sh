@@ -25,6 +25,6 @@ strip -s --strip-unneeded --remove-section=.note.gnu.gold-version \
     --remove-section=.jcr --remove-section=.got.plt \
     tiny7zx
 ./sstrip tiny7zx
-upx.pts --ultra-brute tiny7zx
+upx --ultra-brute tiny7zx
 
 : c-xstatic.sh OK.
